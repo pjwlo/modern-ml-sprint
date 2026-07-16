@@ -1,0 +1,4 @@
+[flake8]
+# Ignore unused imports (F401) specifically inside __init__.py files
+per-file-ignores =
+    **/__init__.py: F401
