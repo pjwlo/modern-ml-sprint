@@ -2,3 +2,6 @@
 # Ignore unused imports (F401) specifically inside __init__.py files
 per-file-ignores =
     **/__init__.py: F401
+
+# Set maximum allowed line length to align with Black (or slightly more flexible)
+max-line-length = 100
