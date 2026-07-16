@@ -1,0 +1,15 @@
+.venv/
+venv/
+ENV/
+
+# Ignore OS-specific junk
+.DS_Store
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local environment variables
+.env
