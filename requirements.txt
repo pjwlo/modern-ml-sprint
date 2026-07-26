@@ -13,4 +13,4 @@ pyflakes==3.4.0
 Pygments==2.20.0
 pytest==9.1.1
 pytokens==0.4.1
-google-generativeai==>=0.8.0
+google-generativeai>=0.8.0
