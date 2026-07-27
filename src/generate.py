@@ -29,7 +29,7 @@ def get_client(api_key: str = None) -> genai.Client:
 def generate_summary(
     source_text: str,
     client: genai.Client = None,
-    model_name: str = "gemini-3.1-flash",
+    model_name: str = "gemini-3.6-flash",
 ) -> str:
     """
     Generate a summary of source_text using Gemini.
