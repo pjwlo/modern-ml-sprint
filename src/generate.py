@@ -57,10 +57,23 @@ def generate_summary(
 
 
 if __name__ == "__main__":
-    sample_text = (
-        "Bridgewater Associates is an investment management firm founded in 1975 "
-        "by Ray Dalio. The firm is known for its systems-driven approach to "
-        "understanding markets and economies."
-    )
-    summary = generate_summary(sample_text)
+    import sys
+
+    if len(sys.argv) > 1:
+        # A file path was provided on the command line, e.g.:
+        #   python src/generate.py path/to/source.txt
+        file_path = sys.argv[1]
+        with open(file_path, "r", encoding="utf-8") as f:
+            source_text = f.read()
+        print(f"Read {len(source_text)} characters from {file_path}\n")
+    else:
+        # No file provided -- fall back to the built-in sample text.
+        source_text = (
+            "Bridgewater Associates is an investment management firm founded in 1975 "
+            "by Ray Dalio. The firm is known for its systems-driven approach to "
+            "understanding markets and economies."
+        )
+        print("No file provided, using built-in sample text.\n")
+
+    summary = generate_summary(source_text)
     print(f"Summary: {summary}")
