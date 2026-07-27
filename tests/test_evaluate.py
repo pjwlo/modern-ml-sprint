@@ -16,7 +16,6 @@ scheduled job or manual smoke test -- not on every push/PR.
 import pytest
 from src.evaluate import evaluate_groundedness
 
-
 # Fixed regression cases: (source_text, summary, expected_min_score)
 # In a real system, this set would grow over time as a "golden dataset"
 # of known-good and known-bad examples -- exactly the kind of dataset
@@ -51,7 +50,9 @@ REGRESSION_CASES = [
 ]
 
 
-@pytest.mark.parametrize("case", REGRESSION_CASES, ids=[c["name"] for c in REGRESSION_CASES])
+@pytest.mark.parametrize(
+    "case", REGRESSION_CASES, ids=[c["name"] for c in REGRESSION_CASES]
+)
 def test_groundedness_regression(case):
     """
     Regression test: each known case should evaluate to its expected

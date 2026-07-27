@@ -37,9 +37,33 @@ def _claim_overlap_score(claim: str, source_text: str) -> float:
     in the source text.
     """
     stopwords = {
-        "the", "a", "an", "is", "are", "was", "were", "and", "or", "of",
-        "in", "on", "at", "to", "for", "with", "by", "as", "that", "this",
-        "it", "its", "be", "been", "has", "have", "had",
+        "the",
+        "a",
+        "an",
+        "is",
+        "are",
+        "was",
+        "were",
+        "and",
+        "or",
+        "of",
+        "in",
+        "on",
+        "at",
+        "to",
+        "for",
+        "with",
+        "by",
+        "as",
+        "that",
+        "this",
+        "it",
+        "its",
+        "be",
+        "been",
+        "has",
+        "have",
+        "had",
     }
 
     def significant_words(text: str) -> set:
@@ -84,11 +108,13 @@ def evaluate_groundedness(
         is_grounded = score >= claim_threshold
         if is_grounded:
             grounded_count += 1
-        claim_scores.append({
-            "claim": claim,
-            "overlap_score": round(score, 3),
-            "grounded": is_grounded,
-        })
+        claim_scores.append(
+            {
+                "claim": claim,
+                "overlap_score": round(score, 3),
+                "grounded": is_grounded,
+            }
+        )
 
     overall_score = grounded_count / len(claims) if claims else 1.0
     passed = overall_score >= overall_threshold
