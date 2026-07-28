@@ -1,6 +1,7 @@
 .venv/
 venv/
 ENV/
+sample_data/
 
 # Ignore OS-specific junk
 .DS_Store
