@@ -10,7 +10,7 @@ black .
 
 echo "Step 2: Running Linter (Flake8)..."
 # We exclude our virtual environment so we don't lint third-party libraries
-flake8 . --exclude=.venv
+flake8 . --exclude=.venv,.git
 
 echo "Step 3: Running Test Suite (Pytest)..."
 pytest
